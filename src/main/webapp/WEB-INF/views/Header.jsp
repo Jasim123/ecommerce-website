@@ -17,6 +17,46 @@
  <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 
+<style>
+.item{
+align:
+}
+
+footer
+{
+background:#333;
+color:#eee;
+font-size:13px;
+font-color:white;
+padding:30px;
+}
+
+ul.unstyled
+{
+list-style:none;
+padding:0px;
+}
+ul.unstyled li a, ul.nav li a:visited 
+{
+    color: #eee;
+}
+
+ul.unstyled li a:hover, ul.nav li a:active 
+{
+    color: #eee;
+}
+body 
+{
+  background: url("E:/2ndproject/electronics/src/main/webapp/WEB-INF/resources/images/back2.jpg");
+}
+.carousel img {
+    min-width: 100%;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #333;
+}
+
+</style>
 
 </head>
 <body >
@@ -51,10 +91,11 @@
         </li>
         <li><a href="#">ABOUTUS</a></li>
         <li><a href="#">CONTACTUS</a></li>
+        <li><a href="Admin">Link Up to Admin</a>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="register"><span class="glyphicon glyphicon-user"></span> REGISTER</a></li>
+        <li><a href="reg"><span class="glyphicon glyphicon-user"></span> REGISTER</a></li>
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
       </ul>
 

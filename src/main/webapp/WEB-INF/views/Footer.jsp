@@ -44,7 +44,7 @@ vl;rv;lr,pr,bbor,borbor,br;lb,repre,;lre</p>
 <hr>
 
   
-<h6>Copyright &copy;2016 Shop&commat; &excl;T . All Rights Reserved</h6>
+<h6>Copyright &copy;2016 Shop &commat; &excl;T . All Rights Reserved</h6>
  
 
 

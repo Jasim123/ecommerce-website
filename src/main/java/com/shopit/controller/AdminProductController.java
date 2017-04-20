@@ -57,7 +57,7 @@ public class AdminProductController {
 	{
 		
 		ModelAndView mv = new ModelAndView("AdminProductPage","AdminProduct",new AdminProduct());
-		String catjsonlist=catDAO.listCategory();
+		String catjsonlist=catDAO.list();
 		
 		
 		mv.addObject("data",catjsonlist);
@@ -80,7 +80,7 @@ public class AdminProductController {
 		String adprd=adProdDAO.listAdProd();
 		ModelAndView mv = new ModelAndView("AdminProductPage","AdminProduct",new AdminProduct());
 		mv.addObject("data3",adprd);
-		String catjsonlist=catDAO.listCategory();
+		String catjsonlist=catDAO.list();
 		
 		mv.addObject("data",catjsonlist);
 		System.out.println("in addAdminProduct post3");
@@ -142,7 +142,7 @@ public class AdminProductController {
 		m.addObject("data3",adpjson);
 		int id=adProdDAO.sortId();
 		m.addObject("adpid",id);
-		String catjsonlist=catDAO.listCategory();
+		String catjsonlist=catDAO.list();
 		
 		m.addObject("data",catjsonlist);
 		String supjsonlist=supDAO.listSupplier();
@@ -159,7 +159,7 @@ public class AdminProductController {
 		
 		System.out.println("pro idddddddddddddddddddddd"+ad.getAproductId());
 		m.addObject("check",false);
-		String catjsonlist=catDAO.listCategory();
+		String catjsonlist=catDAO.list();
 		
 		
 		m.addObject("data",catjsonlist);
@@ -181,7 +181,7 @@ public class AdminProductController {
 		ModelAndView m = new ModelAndView("AdminProductPage","AdminProduct",new AdminProduct());
 		m.addObject("check",true);
 		m.addObject("data3",apdjsonlist);
-		String catjsonlist=catDAO.listCategory();
+		String catjsonlist=catDAO.list();
 		
 		
 		

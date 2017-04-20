@@ -1,4 +1,4 @@
-<%@include file="AdminHeader.jsp"%>
+ <%@include file="AdminHeader.jsp"%>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -68,7 +68,7 @@ search:<input type="text" placeholder="search category" ng-model="searchprd"/>
 <tr class="success" ng-repeat="s in supplier|filter:searchprd">
                 <td>{{s.sid}}</a></td> 
                  <td>{{s.name}}</td>
-                <td> {{s.address}}</td>
+                 <td> {{s.address}}</td>
             <td><a href="UpdateSupplier?sid={{s.sid}}">Edit</a></td>
                 <td><a href="delsupplier?sid={{s.sid}}">Delete</a></td>
                <!--   <td><img src="./Resources/img/{{product.img}}.jpg" height="50px" width="50px"/></td> -->  

@@ -37,7 +37,7 @@ public class CategoryController
 	@RequestMapping(value="/category",method = RequestMethod.GET)
 	public ModelAndView showCat()
 	{  
-		String catjsonlist=catdao.listCategory();
+		String catjsonlist=catdao.list();
 		ModelAndView mv = new ModelAndView("AdminCategory","category",new Category());
 	//	int id=supDAO.SortId();
 		mv.addObject("data",catjsonlist);
@@ -49,8 +49,8 @@ public class CategoryController
 	@RequestMapping(value="/category",method= RequestMethod.POST)
 	public ModelAndView addCategory(Category cat)
 	{
-		catdao.saveorupdate(cat);
-		String catjsonlist = catdao.listCategory();
+		catdao.saveOrUpdate(cat);
+		String catjsonlist = catdao.list();
 		ModelAndView mv = new ModelAndView("AdminCategory","category",new Category());
 		mv.addObject("data",catjsonlist);
 		mv.addObject("check",true);
@@ -61,7 +61,7 @@ public class CategoryController
 	public ModelAndView delCategory(@RequestParam("id") String id)
 	{
 		catdao.delete(id);
-		String catjsonlist=catdao.listCategory();
+		String catjsonlist=catdao.list();
 		ModelAndView mv = new ModelAndView("AdminCategory","category",new Category());
 		mv.addObject("check",true);
 		mv.addObject("data",catjsonlist);
@@ -73,7 +73,7 @@ public class CategoryController
 	@RequestMapping(value="/UpdateCategory", method=RequestMethod.GET)
 	public ModelAndView updatecatt(@RequestParam("id") String id)
 	{ 
-		Category cat = catdao.DispRecord(id);
+		Category cat = catdao.get(id);
 		ModelAndView mv = new ModelAndView("AdminCategory","category",new Category());
 		mv.addObject("check",false);
 		return mv;
@@ -82,8 +82,8 @@ public class CategoryController
 	@RequestMapping(value="/UpdateCategory", method=RequestMethod.POST)
 	public ModelAndView updateCat(Category c)
 	{
-		catdao.updateRecord(c);
-		String catjsonlist=catdao.listCategory();
+		catdao.UpRecord(c);
+		String catjsonlist=catdao.list();
 		ModelAndView mv = new ModelAndView("AdminCategory","category",new Category());
 		mv.addObject("check",true);
 		mv.addObject("data",catjsonlist);

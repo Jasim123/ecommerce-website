@@ -32,21 +32,21 @@ public class SupplierController
 	@RequestMapping(value="/SupplierView",method = RequestMethod.POST)
 	public ModelAndView addSupplier(Supplier sup) 
 	{
-		supDAO.saveorupdate(sup);
+		supDAO.saveSupplier(sup);
 		String supjsonlist=supDAO.listSupplier();
 		ModelAndView mv = new ModelAndView("SupplierView","Supplier",new Supplier());
 		mv.addObject("data",supjsonlist);
 		mv.addObject("check",true);
-		int id=supDAO.SortId();
-		mv.addObject("supid",id);
+		int id=supDAO.sortId();
+		mv.addObject("suppId",id);
 		return mv;
 	}
 	@RequestMapping(value="/delsupplier",method = RequestMethod.GET)
-	public ModelAndView delSupplier(@RequestParam("sid")int sid) 
+	public ModelAndView delSupplier(@RequestParam("suppId")int sid) 
 	{
 		
 		
-		supDAO.delete(sid);
+		supDAO.deleteSupplier(sid);
 		String supjsonlist=supDAO.listSupplier();
 		ModelAndView m = new ModelAndView("SupplierView","Supplier",new Supplier());
 		m.addObject("check",true);
@@ -56,7 +56,7 @@ public class SupplierController
 		return m;
 	}
 	@RequestMapping(value="/UpdateSupplier",method=RequestMethod.GET)
-	public ModelAndView Updatesupp(@RequestParam("sid")int sid)
+	public ModelAndView Updatesupp(@RequestParam("suppId")int sid)
 	{
 		
 		
@@ -71,7 +71,7 @@ public class SupplierController
 	public ModelAndView updatesupp(Supplier s)
 	{
 
-		supDAO.updateRecord(s);
+		supDAO.UpRecord(s);
 		String supjsonlist=supDAO.listSupplier();
 		ModelAndView m = new ModelAndView("SupplierView","Supplier",new Supplier());
 		m.addObject("check",true);
